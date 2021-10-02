@@ -13,7 +13,7 @@ class Password
         string[] Lettes = { "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
         string[] Numbers = { "2", "3", "4", "5", "6", "7", "8", "9" };
 
-        string pass1 = "", pass2 = ""; //Создаем чтобы работать
+        string pass1 = "", pass2 = ""; //Хранят кусочкит паролей
 
         Random RandomSmallLetter = new Random();
         for (int i = 0; i < 2; i++)
