@@ -15,7 +15,7 @@ class Password
 
         string pass1 = "", pass2 = ""; //Хранят кусочки паролей
 
-        Random RandomSmallLetter = new Random();
+        Random RandomSmallLetter = new Random(); 
         for (int i = 0; i < 2; i++)
         {
             pass1 += SmallLetters[RandomSmallLetter.Next(SmallLetters.Length)];

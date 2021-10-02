@@ -38,7 +38,7 @@ using System.Threading; //Для усыпления потока
                                 string Pass = Password.MagicZone(); // Обращаемся к генератору паролей
                                 Console.WriteLine(Pass); // Выводим пароль
                                 Console.ResetColor();
-                                Thread.Sleep(5);
+                                Thread.Sleep(5); //Подмораживаем поток чтобы сгенить новый пароль
                                 Console.WriteLine(); // Разрыв между паролем
                             }
                             Console.WriteLine("================================");
@@ -97,16 +97,15 @@ using System.Threading; //Для усыпления потока
                         }
                     }
                     Translit translit = new Translit(); // При помощи словаря который ниже преводим все в другие буквы
-                    string ENfame = translit.MagicZone(fame); // полумамилия
+                    string ENfame = translit.MagicZone(fame); // полуфамилия
                     string ENname = translit.MagicZone(name); // полулогин
                     
                     string subENname = "."; // Нужна для разделителя
                     ENname = ENname.Insert(2, subENname); // Вставляем точку после второго знака
 
                     var login = ENname.Remove(ENname.IndexOf('.'));
-                    string T = "."; // создаем строку с точкой
-                    string loginemail = login + T + ENfame + email;
-                    login = login + T + ENfame;
+                    string loginemail = login + "." + ENfame + email;
+                    login = login + "." + ENfame;
 
                     Console.WriteLine("***");
                     Console.WriteLine("");
